@@ -42,7 +42,7 @@ header a{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
     border-radius: 5px;
-    
+
 }
 
 .menu-bar a:hover {
@@ -137,6 +137,18 @@ table tr:hover {
     background-color: #f9f9f9;
 }
 
+.user-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Tambahkan CSS untuk membuat table responsif */
 
 @media screen and (max-width: 600px) {
@@ -144,4 +156,26 @@ table tr:hover {
         margin: 20px auto;
     }
 }
+
+/* Tambahkan CSS untuk membuat tombol hapus merah */    
+.red {
+    background-color: #dc3545;
+}   
+
+.red:hover {
+    background-color: #c82333;
+}
+
+/* Tambahkan CSS untuk membuat tombol edit kuning */
+
+
+.yellow {
+    background-color: #ffc107;
+}   
+
+.yellow:hover {
+    background-color: #e0a800;
+}   
+
+/* Tambahkan CSS untuk membuat tombol kembali biru */
 

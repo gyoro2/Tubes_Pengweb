@@ -2,6 +2,14 @@
 // data.php
 include 'db.php';
 
+session_start();
+
+// Periksa apakah pengguna sudah login
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
+
 // Ambil data dari database
 $query = "SELECT * FROM data";
 $result = $conn->query($query);
@@ -17,15 +25,18 @@ $result = $conn->query($query);
 </head>
 
 <header>
-        <div>
-            <h1>Fiirefly</h1>
-        </div>
-        <nav class="menu-bar">
-            <a href="form.php">Input Data</a>
-            <a href="data.php">Lihat Data</a>
-            <a href="logout.php">Logout</a>
-        </nav>
-    </header>
+    <div>
+        <h1>Firefly</h1>
+    </div>
+    <div class="user-info">
+        <p>Hai, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+    </div>
+    <nav class="menu-bar">
+        <a href="form.php">Input Data</a>
+        <a href="data.php">Lihat Data</a>
+        <a href="logout.php">Logout</a>
+    </nav>
+</header>
 
 <body>
     <div class="table-container">

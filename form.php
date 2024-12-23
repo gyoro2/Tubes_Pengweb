@@ -8,7 +8,6 @@ if (!isset($_SESSION['username'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +18,18 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <header>
-        <div>
-            <h1>Firefly</h1>
-        </div>
-        <nav class="menu-bar">
-            <a href="form.php">Input Data</a>
-            <a href="data.php">Lihat Data</a>
-            <a href="logout.php">Logout</a>
-        </nav>
-    </header>
+    <div>
+        <h1>Firefly</h1>
+    </div>
+    <div class="user-info">
+        <p>Hai, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+    </div>
+    <nav class="menu-bar">
+        <a href="form.php">Input Data</a>
+        <a href="data.php">Lihat Data</a>
+        <a href="logout.php">Logout</a>
+    </nav>
+</header>
 
 <body>
     <div class="form-container">
